@@ -6,52 +6,205 @@
 \begin{document}
 
 % Title
-\title{An open source scientific article}
+\title{Breaking resonances with Post-Main Sequence Winds}
 
 % Author list
-\author{@tedjohnson12}
+\author{Ted Johnson}
+\affiliation{University of Nevada, Las Vegas 4505 South Maryland Parkway, Las Vegas, NV 89154, USA}
+
+\author{Rebecca Martin}
+\affiliation{University of Nevada, Las Vegas 4505 South Maryland Parkway, Las Vegas, NV 89154, USA}
+
+\author{Stephen Lepp}
+\affiliation{University of Nevada, Las Vegas 4505 South Maryland Parkway, Las Vegas, NV 89154, USA}
+
 
 % Abstract with filler text
 \begin{abstract}
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-    Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
-    Curabitur dictum gravida mauris, consectetuer id, vulputate a, magna.
-    Donec vehicula augue eu neque, morbi tristique senectus et netus et.
-    Mauris ut leo, cras viverra metus rhoncus sem, nulla et lectus vestibulum.
-    Phasellus eu tellus sit amet tortor gravida placerat.
-    Integer sapien est, iaculis in, pretium quis, viverra ac, nunc.
-    Praesent eget sem vel leo ultrices bibendum.
-    Aenean faucibus, morbi dolor nulla, malesuada eu, pulvinar at, mollis ac.
-    Curabitur auctor semper nulla donec varius orci eget risus.
-    Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam.
-    Duis eget orci sit amet orci dignissim rutrum.
+    We explore the effects of massive stellar winds on the resonances
+    of planets as a host star transitions into a white dwarf.
 \end{abstract}
 
 % Main body with filler text
 \section{Introduction}
 \label{sec:intro}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-Ut purus elit, vestibulum ut, placerat ac, adipiscing vitae, felis.
-Curabitur dictum gravida mauris, consectetuer id, vulputate a, magna.
-Donec vehicula augue eu neque, morbi tristique senectus et netus et.
-Mauris ut leo, cras viverra metus rhoncus sem, nulla et lectus vestibulum.
-Phasellus eu tellus sit amet tortor gravida placerat.
-Integer sapien est, iaculis in, pretium quis, viverra ac, nunc.
-Praesent eget sem vel leo ultrices bibendum.
-Aenean faucibus, morbi dolor nulla, malesuada eu, pulvinar at, mollis ac.
-Curabitur auctor semper nulla donec varius orci eget risus.
-Duis nibh mi, congue eu, accumsan eleifend, sagittis quis, diam.
-Duis eget orci sit amet orci dignissim rutrum.
+It has become clear over the past two decades that pollution by metals
+of the atmospheres of solitaty white dwarf stars (WDs) can be explained
+via accretion of material from it's planetary system (ref Zuckerman+03, Jura08, Klein+10, etc). 
+Additionally, the $\nu_6$ resonance has been shown to be an
+effective mechanism for delivering rocky asteroids to within
+the WD's tidal radius \citep{smallwood2021}.
 
-Nam dui ligula, fringilla a, euismod sodales, sollici- tudin vel, wisi.
-Morbi auctor lorem non justo, nam lacus libero, pretium at, lobortis vitae.
-Donec aliquet, tortor sed accumsan bibendum, erat ligula aliquet magna.
-Morbi ac orci et nisl hendrerit mollis, suspendisse ut massa, cras nec ante.
-Pellentesque a nulla cum sociis natoque penatibus et magnis dis parturient.
-Aliquam tincidunt urna, nulla ullamcorper vestibulum turpis.
-Pellentesque cursus luctus mauris \citep{Luger2021}.
+However, there are now three examples of WD's that are accreting ice-rich
+material: G200-39, GD 378, and G238-44 \citep[][, respectively]{xu2017,klein2021,johnson2022}.
+Of these three, G200-39 and G238-44 are believed to be the result accretion
+of exo-Kuiper belt objects (exo-KBOs) (GD 378 is best explained by an icy moon
+of a planet with a strong magnetic field, see \citet{doyle2021}).
+
+The delivery mechanism of exo-KBOs to a WD remains an open question. 
+\citet{bonsor2011} investigated the ability of a single planet to scatter
+KBOs in towards the host star.
+
+\citet{chen2019} suggested the $\nu_8$ resonance as a mechanism to
+deliver water to early Earth. It seems that this could also plausibly
+explain pollution by KBOs, except that objects in this resonance are
+not expected to survive for a star's main-sequence lifetime. Instead,
+a WD system would require that objects are put into this resonance during
+the star's transition from main-sequence to white dwarf.
+
+In the solar system, the largest population of KBOs to investigate as
+candidates for the $\nu_8$ resonance are the plutinos, or objects in
+a 3:2 mean-motion resonance with Neptune. The 3:2 resonance is very stable
+and these objects are expected survive for the full
+lifetime of the host star \citep{nesvorny2000}.
+
+Given this stability, the 3:2 resonance is not expected to
+break provided that mass loss is sufficiently slow (i.e. the
+mass loss timescale is much longer than the orbital periods of
+the objects). However, in this study we investigate the additional
+effects of massive stellar winds that are the result of mass loss.
+Effectively, the central mass ``seen'' by an object orbiting a star
+shedding it's outer layers is the mass of that star plus the mass of the
+wind interior to the object. Effectively, the wind imposes a
+position-dependent time delay on the central mass. We investigate
+the effects of this differential potential on the resonances of
+objects in a 3:2 mean-motion resonance with Neptune.
+
+
+\section{Methods}
+\label{sec:methods}
+
+\subsection{The central force of an isotropic massive wind}
+
+Let $M(t)$ be the mass of the central object. We will assume
+that change in $M$ be due to an isotropic wind with some speed
+$v(r,t)$
+
+Let $t_{\text{wind}}(r,t)$ be the travel time for wind that arrives to
+a radius $r$ at time $t$. For a planet at $r$ the mass interior
+to its orbit is $M(t-t_{\text{wind}})$.
+
+In this study we will assume that mass loss occurs exponentially
+with an e-folding time of $\tau$. If mass loss begins at $t=0$
+then
+\begin{equation}
+    M = M_0 e^{-t/\tau} \label{eq:m}
+\end{equation}
+
+and 
+
+\begin{equation}
+    \dot{M} = \frac{-1}{\tau} M_0 e^{-t/\tau} \label{eq:mdot}
+\end{equation}
+
+We will also assume that the wind travels at its escape velocity
+at all times. For a particle that leaves the star at a time
+$t_0$
+
+\begin{equation}
+    v^2 = \frac{2 G M(t_0)}{r}
+\end{equation}
+
+For $M=M_\odot$ this corresponds to 617 km/s at 1 $R_\odot$
+and 7.7 km/s at 30 AU.
+
+Recognizing that $v = \frac{\text{d}r}{\text{d}t}$ and that
+$r=R$ at $t=t_0$, we have
+\begin{equation}
+    r^{\frac{3}{2}} - R^{\frac{3}{2}} = \frac{3}{2}
+    \sqrt{2 G M(t_0)} (t-t_0)
+\end{equation}
+
+or
+
+\begin{equation}
+    t_{\text{wind}} = \frac{2 ( r^{\frac{3}{2}} - R^{\frac{3}{2}} )}
+    {3\sqrt{2 G M(t - t_{\text{wind}})}} \label{eq:twind}
+\end{equation}
+
+We now define $M_{\text{eff}}(r,t)$ as the mass ``seen'' by a planet at
+radius $r$ at time $t$.
+\begin{equation}
+    M_{\text{eff}}(r,t) = M(t-t_{\text{wind}}) \label{eq:meff}
+\end{equation}
+
+If $M$ changes exponentially as in Equation \ref{eq:m} then
+\begin{equation}
+    M_{\text{eff}}(r,t) = M_0 e^{-(t-t_{\text{wind}})/\tau} \label{eq:meff2}
+\end{equation}
+
+Our expression for $t_{\text{wind}}$ then becomes
+\begin{equation}
+    t_{\text{wind}} = \frac{2 ( r^{\frac{3}{2}} - R^{\frac{3}{2}} )}
+    {3\sqrt{2 G M_0 }} \label{eq:twind2}
+\end{equation}
+
+Appendix \ref{app:twind} shows the results of solving for
+$t_{\text{wind}}$ in Equation \ref{eq:twind2} is
+
+\begin{equation}
+    t_{\text{wind}} = 2\tau
+    W\left(
+        \frac{r^{\frac{3}{2}} - R^{\frac{3}{2}}}
+        {3\tau\sqrt{2 G M_0}}
+        + e^{t/2\tau}
+    \right)
+    \label{eq:twindfinal}
+\end{equation}
+
+Where $W$ is the Lambert W function.
 
 \bibliography{bib}
+
+\appendix
+
+\section{Solving for $t_{\text{wind}}$}
+\label{app:twind}
+
+We now solve for $t_{\text{wind}}$ in Equation \ref{eq:twind2}.
+Moving the exponential from the denominator we see
+
+\begin{equation}
+    \frac{t_{\text{wind}}}{2\tau} e^{-(t-t_{\text{wind}})/2\tau}
+    = \frac{2}{3}
+    \frac{r^{\frac{3}{2}} - R^{\frac{3}{2}}}
+    {2\tau\sqrt{2 G M_0}}
+    \label{eq:twind3}
+\end{equation}
+
+Where the factor of $1/2\tau$ has been introduced to make each side
+dimensionless.
+Taking the natural logarithm of both sides of Equation \ref{eq:twind3} 
+and rearranging, we have
+\begin{equation}
+    \ln{(t_{\text{wind}}/2\tau)}
+    + \frac{t_{\text{wind}}}{2\tau}
+    = \ln{(A(r))} + \frac{t}{2\tau}
+\end{equation}
+
+Where $A(r)$ is the right hand side of Equation \ref{eq:twind3}.
+This can easily be put into the form $xe^{x} = b$
+where $x = t_{\text{wind}}/2\tau$
+and
+\[ b = \frac{r^{\frac{3}{2}} - R^{\frac{3}{2}}}
+{3\tau\sqrt{2 G M_0}} + e^{t/2\tau} \]
+
+The solution to this equation is $x = W(b)$ where $W$ is
+the Lambert W function.
+We see then that we can solve for $t_{\text{wind}}$ as
+a function of $r$ and $t$:
+
+\begin{equation}
+    t_{\text{wind}} = 2\tau
+    W\left(
+        \frac{r^{\frac{3}{2}} - R^{\frac{3}{2}}}
+        {3\tau\sqrt{2 G M_0}}
+        + e^{t/2\tau}
+    \right)
+\end{equation}
+
+
+
 
 \end{document}
